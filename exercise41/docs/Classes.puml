@@ -1,0 +1,18 @@
+@startuml
+class Solution41 {
+    main(String[])
+}
+
+Solution41 *-- FileSort
+
+class FileSort {
+    -ArrayList<String>: names
+
+    +List<String>: getNames()
+
+    +void: readInputFile()
+    +void: sortNames()
+    +void: createOutputFIle()
+
+}
+@enduml
