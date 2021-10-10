@@ -1,0 +1,34 @@
+@startuml
+
+Solution42 *-- FileIO
+FileIO *-- RecordList
+RecordList *-- Record
+
+class Solution42 {
+    main(String[])
+}
+
+class FileIO {
+-RecordList: recordList
+
++void: readFile()
+-void: parseData()
++void: printFile()
+}
+
+class RecordList {
+-List<Record>: recordList
+
++void: addRecord(String, String, int)
++List<Record>: getRecordList()
+}
+
+class Record {
+-String: firstName
+-String: lastName
+-int: salary
+
++Record(String, String, int)
++String: toString()
+}
+@enduml
