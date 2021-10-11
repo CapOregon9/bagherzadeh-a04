@@ -13,10 +13,14 @@ public class Solution43 {
         boolean cssFolder = userInput.getCSSFolder();
         //make directories and the html file
         websiteGenerator.makeDirectory(siteName, "");
-        //if statement for jsFolder
-        websiteGenerator.makeDirectory(siteName, "js");
-        //if statement for cssFolder
-        websiteGenerator.makeDirectory(siteName, "css");
+        if (jsFolder) {
+            //if statement for jsFolder
+            websiteGenerator.makeDirectory(siteName, "js");
+        }
+        if (cssFolder) {
+            //if statement for cssFolder
+            websiteGenerator.makeDirectory(siteName, "css");
+        }
         websiteGenerator.createHTML(siteName, author);
     }
 }

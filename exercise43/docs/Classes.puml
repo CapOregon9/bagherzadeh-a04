@@ -1,0 +1,41 @@
+@startuml
+
+Solution43 *-- UserInput
+Solution43 *-- WebsiteGenerator
+
+DirectoryMaker <|.. WebsiteGenerator
+HTMLMaker <|.. WebsiteGenerator
+
+class Solution43 {
+    main(String[])
+    String: siteName
+    String: author
+    boolean: jsFolder
+    boolean: cssFolder
+}
+
+class UserInput {
+-Scanner: input
+
++void: getSiteName()
++void: getAuthor()
++boolean: getJSFolder()
++boolean: getCSSFolder()
+}
+
+class WebsiteGenerator {
++void: makeDirectory(String, String)
++void: madeDirectory(String, String)
++void: createHTML(String, String)
+}
+
+interface DirectoryMaker {
+void: makeDirectory(String, String)
+void: madeDirectory(String, String)
+
+}
+
+interface HTMLMaker {
+void: createHTML(String, String)
+}
+@enduml
