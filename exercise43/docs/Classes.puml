@@ -1,7 +1,7 @@
 @startuml
 
-Solution43 *-- UserInput
-Solution43 *-- WebsiteGenerator
+Solution43 -- UserInput
+Solution43 -- WebsiteGenerator
 
 DirectoryMaker <|.. WebsiteGenerator
 HTMLMaker <|.. WebsiteGenerator
