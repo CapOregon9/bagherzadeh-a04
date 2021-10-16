@@ -1,0 +1,23 @@
+@startuml
+
+Solution45 -- WordFinder
+
+class Solution45 {
+    main(String[])
+    WordFinder: wordFinder
+}
+
+class WordFinder {
+-StringBuilder: formattedString
+
++String: replaceWord(String fullWord, String oldWord, String newWord)
++void: readStrings()
++void: storeString(String word)
++void: writeString()
++String: getOutputFile()
+
+'used in junit testing
++StringBuilder: getStringBuilder()
+}
+
+@enduml
