@@ -5,7 +5,6 @@
 
 package baseline;
 
-import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Paths;
 import java.util.*;
@@ -42,15 +41,11 @@ public class FileIO {
     }
 
     public void printFile() {
-        //prints the file to the output txt
+        //prints the file
         List<Record> records = recordList.getRecordList();
-        try (Formatter output = new Formatter("data\\exercise42_output.txt")) {
-            output.format("%-10s%-10s%s%n--------------------------%n", "Last", "First", "Salary");
-            for (Record record: records) {
-                output.format(record.toString());
-            }
-        } catch (SecurityException | FileNotFoundException | FormatterClosedException e) {
-            System.out.println("Could not write file.");
+        System.out.printf("%-10s%-10s%s%n--------------------------%n", "Last", "First", "Salary");
+        for (Record currentRecord: records) {
+            System.out.printf(currentRecord.toString());
         }
     }
 }
