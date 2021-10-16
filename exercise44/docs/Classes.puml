@@ -1,3 +1,44 @@
 @startuml
 
+Solution44 -- FileProcessor
+Solution44 -- ProductList
+
+ProductList o-- Product
+
+class Solution44 {
+    main(String[])
+    FileProcessor: fileProcessor
+    Gson: gson
+    ProductList: productList
+}
+
+class Product {
+-String: name
+-double: price
+-int: quantity
+
++Product()
++String: getName()
++String: toString()
+
+'used in junit testing
++Product(String: name, double: price, int: quantity)
+}
+
+class FileProcessor {
++ProductList: readJSONFile()
+}
+
+class ProductList {
+-List<Product>: products
+-Scanner: input
+
++void: searchForProduct()
++boolean: inProductList(String input)
++void: printProduct(String input)
+
+'methods below used for junit testing
++void: addProduct(Product product)
++List<Product> getProductList()
+}
 @enduml

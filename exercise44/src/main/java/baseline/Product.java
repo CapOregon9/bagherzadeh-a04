@@ -6,13 +6,34 @@ public class Product {
     private double price;
     private int quantity;
 
+    public Product() {
+    }
+
+    public Product(String name, double price, int quantity) {
+        //used in junit testing
+        this.name = name;
+        this.price = price;
+        this.quantity = quantity;
+    }
+
+    public String getName() {
+        //used for product search
+        return name;
+    }
+
+    public double getPrice() {
+        //used for junit testing
+        return price;
+    }
+
+    public int getQuantity() {
+        //used for junit testing
+        return quantity;
+    }
+
     @Override
     public String toString() {
         //to be used for printing products
-        return "Product{" +
-                "name='" + name + '\'' +
-                ", price=" + price +
-                ", quantity=" + quantity +
-                '}';
+        return  String.format("Name: %s%nPrice: %.2f%nQuantity: %d", name, price, quantity);
     }
 }
