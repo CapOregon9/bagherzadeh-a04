@@ -1,0 +1,35 @@
+@startuml
+
+Solution45 -- FileIO
+FileIO -- WordFrequencyCounter
+
+class Solution45 {
+    main(String[])
+    FileIO: fileIO
+}
+
+class FileIO {
+-WordFrequencyCounter: wordFrequencyCounter
+
++void: readStrings()
++void: sortFrequencies()
++void: printFrequencies()
+
+'used in junit testing
++Map<String, Integer>: getSortedMap()
+}
+
+class WordFrequencyCounter {
+-Map<String, Integer>: unsortedFrequencyValues
+-Map<String, Integer>: sortedFrequencyValues
+
++void: addToUnsortedMap()
++void: sortMap()
++void: printFrequencyMap()
+
++Map<String, Integer>: getUnsortedFrequencyValues
++Map<String, Integer>: getSortedFrequencyValues
+
+}
+
+@enduml
