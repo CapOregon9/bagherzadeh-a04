@@ -56,9 +56,8 @@ public class WordFinder {
         formattedString.append(" " + word);
     }
 
-    public void writeString() {
+    public void writeString(String fileLocation) {
         //this method writes the formatted string to a file
-        String fileLocation = getOutputFile();
         try (Formatter output = new Formatter(String.format("data\\%s.txt", fileLocation))) {
             output.format("%s", formattedString.toString());
         } catch (SecurityException | FileNotFoundException | FormatterClosedException e) {

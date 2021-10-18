@@ -12,6 +12,6 @@ public class Solution45 {
         //call method to readStrings
         wordFinder.readStrings();
         //call method to write the formatted string
-        wordFinder.writeString();
+        wordFinder.writeString(wordFinder.getOutputFile());
     }
 }

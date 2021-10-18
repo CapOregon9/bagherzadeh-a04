@@ -1,7 +1,14 @@
+/*
+ *  UCF COP3330 Fall 2021 Assignment 4 Solutions
+ *  Copyright 2021 Alexander Bagherzadeh
+ */
+
 package baseline;
 
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import java.io.File;
 
 import static org.junit.jupiter.api.Assertions.*;
 
@@ -39,5 +46,13 @@ class WordFinderTest {
         StringBuilder expectedStringBuilder = new StringBuilder(" use");
         wordFinder.storeString("use");
         assertEquals(expectedStringBuilder.toString(), wordFinder.getStringBuilder().toString());
+    }
+
+    @Test
+    void writeString() {
+        wordFinder.readStrings();
+        wordFinder.writeString("exercise45_output");
+        boolean actualValue = new File("data\\exercise45_output.txt").exists();
+        assertEquals(true, actualValue);
     }
 }
