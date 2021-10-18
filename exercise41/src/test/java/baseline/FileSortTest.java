@@ -7,6 +7,8 @@ package baseline;
 
 import org.junit.jupiter.api.Test;
 
+import java.io.File;
+import java.text.FieldPosition;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -28,5 +30,15 @@ class FileSortTest {
         fileSort.readInputFile();
         fileSort.sortNames();
         assertArrayEquals(sortedNames.toArray(), fileSort.getNames().toArray());
+    }
+
+    @Test
+    void createOutputFile() {
+        FileSort fileSort = new FileSort();
+        fileSort.readInputFile();
+        fileSort.sortNames();
+        fileSort.createOutputFile();
+        boolean actualValue = new File("data\\exercise41_output.txt").exists();
+        assertEquals(true, actualValue);
     }
 }

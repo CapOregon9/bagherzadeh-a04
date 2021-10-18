@@ -3,7 +3,7 @@ class Solution41 {
     main(String[])
 }
 
-Solution41 *-- FileSort
+Solution41 -- FileSort
 
 class FileSort {
     -ArrayList<String>: names
